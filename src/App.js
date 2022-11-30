@@ -89,7 +89,7 @@ export default function Page2() {
        <div style={{display:'flex',
     flex:1,
    flexdirection:'row-reverse',
-   justifyContent:'space-between'}}><div style={{color:'rgb(127,0,255)'}}><AiOutlineArrowLeft/></div>&nbsp; <div>Back</div></div></a>
+   justifyContent:'space-between'}}><div style={{color:'rgb(127,0,255)'}}><AiOutlineArrowLeft/></div>&nbsp; <div style={{color:'black'}}>Back</div></div></a>
   <div style={{fontWeight:'bold',fontSize:"25px"}}>Add New Internship</div>
    <button style={{height:'25px',
    color:'gray',
