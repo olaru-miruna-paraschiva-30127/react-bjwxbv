@@ -6,7 +6,7 @@ import {BsCircle} from "react-icons/bs";
 import {MdPlayArrow} from "react-icons/md";
 import {CiTextAlignJustify} from "react-icons/ci";
 import {BsPlusSquare} from "react-icons/bs";
-import SearchBar from "./searchBar";
+import SearchBar from "./SearchBar";
 
 export default function Page2() {
    let i=0;
@@ -362,7 +362,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
 
 
 
-
+<SearchBar/>
    </article>
    
     </div>
