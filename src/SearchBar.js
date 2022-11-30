@@ -50,16 +50,20 @@ let x=1;
     <div className="SearchBar">
       <div className="search-header">
         <div className="search-text">Search:</div>
-        <input onKeyPress={(e) => { if (e.key == "Enter"){handleClick(e.target.value);}
+        <input onKeyPress={(e) => { if (e.key === "Enter"){handleClick(e.target.value); e.target.value=null;} 
                         }} id="search-box" onClick={h2} onChange={
          (event)=>filterBySearch(event,x)
           
           } />
       </div>
       <div style={{visibility: !t ? 'visible' : 'hidden'}} id="item-list">
-        <ol >
+        <ol  >
           {filteredList.map((item, index) => (
-            <li >{item}</li>
+            <div onClick={event => handleClick(event.target.value)} >
+
+            {item}
+            <hr/>
+            </div>
           ))}
         </ol>
         {names}
