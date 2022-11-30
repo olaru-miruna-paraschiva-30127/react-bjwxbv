@@ -1,12 +1,12 @@
 
 import React, { useState } from "react";
-
+import {HiOutlineMagnifyingGlass} from "react-icons/hi";
 export default function SearchBar() {
   const itemList = [
     "Technology",
     "Development"
   ];
-
+const text="Search Category";
 let x=1;
   const [filteredList, setFilteredList] = new useState(itemList);
   const [t, sett] = new useState(true);
@@ -49,23 +49,24 @@ let x=1;
   return (
     <div className="SearchBar">
       <div className="search-header">
-        <div className="search-text">Search:</div>
-        <input onKeyPress={(e) => { if (e.key === "Enter"){handleClick(e.target.value); e.target.value=null;} 
+        <div className="search-text"></div>
+        <input placeholder={text} onKeyPress={(e) => { if (e.key === "Enter"){handleClick(e.target.value); e.target.value=null; h2;} 
                         }} id="search-box" onClick={h2} onChange={
          (event)=>filterBySearch(event,x)
           
           } />
       </div>
-      <div style={{visibility: !t ? 'visible' : 'hidden'}} id="item-list">
-        <ol  >
+      
+      <div style={{visibility: !t  ? 'visible' : 'hidden'}} id="item-list">
+        <ol>
           {filteredList.map((item, index) => (
-            <div onClick={event => handleClick(event.target.value)} >
+            <div  onClick={(e) => { {handleClick(e.target.value)}}} >
 
             {item}
-            <hr/>
+           <hr/>
             </div>
           ))}
-        </ol>
+       </ol>
         {names}
       </div>
      
