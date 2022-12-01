@@ -6,10 +6,13 @@ import {BsCircle} from "react-icons/bs";
 import {MdPlayArrow} from "react-icons/md";
 import {CiTextAlignJustify} from "react-icons/ci";
 import {BsPlusSquare} from "react-icons/bs";
+import {BsFillPatchCheckFill} from "react-icons/bs";
 import SearchBar from "./SearchBar";
 import {names} from "./SearchBar"
+import TextArea from 'texarea-autosize-reactjs';
 export default function Page2() {
    let i=0;
+   let j=0;
    let k1=false;
    let k2=false;
    let k3=false;
@@ -18,7 +21,7 @@ export default function Page2() {
    let k6=false;
    let k7=false;
    let k8=false;
-
+let text1;
    const [a1, sA1] = useState(true);
    const [a2, sA2] = useState(true);
    const [a3, sA3] = useState(true);
@@ -62,8 +65,8 @@ export default function Page2() {
   
   
   
- if(k1==true){i=1};
- if(k2==true){i=2} ;
+ if(k1==true){i=1; text1="Category"};
+ if(k2==true){i=2;j=1; text1="Description"} ;
  if(k3==true){i=3} ;
  if(k4==true){i=4} ;
  if(k5==true){i=5} ;
@@ -152,7 +155,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    
    borderRadius:'8px',
    boxShadow: i==1?'1px 2px 9px gray':''
-   }}><div>Category</div><div style={{color:i==1?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
+   }}><div style={{display:'flex'}}><div>Category</div>&nbsp;&nbsp;<div style={{visibility: j==1  ? 'visible' : 'hidden', color:'rgb(127,0,255)'}}><BsFillPatchCheckFill/></div></div><div style={{color:i==1?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
 
 <div style={{width:"100%",
       backgroundColor:'rgb(230,231,243)',
@@ -357,17 +360,20 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    borderRadius:'8px',borderColor:'rgb(127,0,255)'}}><BsPlusSquare/>&nbsp;&nbsp;&nbsp;Add More</button></div>
    </div>
 </article>
-<div style={{visibility: i==1  ?  'visible':'hidden'}}>
-<article style={{ float: 'right', width:'55%', backgroundColor:'white',border:'1px solid white',height:'235px',visibility: i==1  ?  'visible':'hidden'}}>
+<div style={{visibility: i!=0  ?  'visible':'hidden'}}>
+<article style={{ float: 'right', width:'55%', backgroundColor:'white',border:'1px solid white',height:'235px',visibility: i!=0  ?  'visible':'hidden'}}>
    <div style={{width:'100%'}}>
-<div style={{fontWeight:'bold',fontSize:"22px"}}>Category</div>
+<div style={{fontWeight:'bold',fontSize:"22px",visibility: i!=0  ?  'visible':'hidden'}}>{text1}</div>
 <br/>
+<div style={{width:'100%'}} >
+   {i==1?<SearchBar/>:<textarea style={{backgroundColor:'rgb(230,231,243)', border:'1px solid rgb(190,190,190)',
+   borderRadius:'8px',width:'100%',height:'150px'}} placeholder="Description"/>}</div></div> 
 
-<div style={{width:'100%',visibility: i==1  ?  'visible':'hidden'}}>
-<SearchBar/></div></div> 
 
+   
    </article>
    </div>
+   
     </div>
   );
 }
