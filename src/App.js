@@ -7,7 +7,7 @@ import {MdPlayArrow} from "react-icons/md";
 import {CiTextAlignJustify} from "react-icons/ci";
 import {BsPlusSquare} from "react-icons/bs";
 import SearchBar from "./SearchBar";
-
+import {names} from "./SearchBar"
 export default function Page2() {
    let i=0;
    let k1=false;
@@ -81,7 +81,7 @@ export default function Page2() {
    justifyContent:'space-between',
    display:'flex',
     flex:1,
-   flexdirection:'row-reverse',
+   flexdirection:'row-reverse'
   
    }}>
      <a href="https://react-hnjjf3.stackblitz.io/"  style={{ backgroundColor:'white',
@@ -357,14 +357,17 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    borderRadius:'8px',borderColor:'rgb(127,0,255)'}}><BsPlusSquare/>&nbsp;&nbsp;&nbsp;Add More</button></div>
    </div>
 </article>
-<article style={{ float: 'right', width:'55%', backgroundColor:'white',border:'1px solid red',height:'200px'}}>
+<div style={{visibility: i==1  ?  'visible':'hidden'}}>
+<article style={{ float: 'right', width:'55%', backgroundColor:'white',border:'1px solid white',height:'235px',visibility: i==1  ?  'visible':'hidden'}}>
+   <div style={{width:'100%'}}>
 <div style={{fontWeight:'bold',fontSize:"22px"}}>Category</div>
+<br/>
 
+<div style={{width:'100%',visibility: i==1  ?  'visible':'hidden'}}>
+<SearchBar/></div></div> 
 
-
-<SearchBar/>
    </article>
-   
+   </div>
     </div>
   );
 }
