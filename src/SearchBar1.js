@@ -1,14 +1,12 @@
-
 import React, { useState } from "react";
 import {HiOutlineMagnifyingGlass} from "react-icons/hi";
-import {CiCircleRemove} from "react-icons/ci";
-import {BsSearch} from "react-icons/bs";
+import {CiLocationOn} from "react-icons/ci";
+import {IoMdArrowDropdown} from "react-icons/io";
 import {BsX} from "react-icons/bs";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-export default function SearchBar() {
+export default function SearchBar1() {
   const itemList = [
-    "Technology",
-    "Development"
+    "London",
+    "Bucharest"
   ];
   
  // <div style={{height:'40%',backgroundColor:'white',width:'',visibility: t  ? 'visible' : 'hidden'}}>
@@ -18,19 +16,12 @@ export default function SearchBar() {
      // <button  style={{backgroundColor:'rgb(204,204,255)', color:/*a3 ?'black':*/'rgb(153,50,204)',borderRadius:'8px',borderColor:'rgb(153,50,204)',visibility: t  ? 'visible' : 'hidden'}}>{names[1]}</button>
      // </div>
 
-const text=" Search Category";
+const text="Search Location";
 let x=1;
 let g;
   const [filteredList, setFilteredList] = new useState(itemList);
+  
   const [t, sett] = new useState(true);
-  const [a, setA] = new useState(true);
-  const h = () => {
-    setA(!a);
-   };
-   const [b, setB] = new useState(true);
-   const hb = () => {
-     setB(!b);
-    };
   const h2 = () => {
     sett(!t);
    };
@@ -38,6 +29,14 @@ let g;
    const h1 = () => {
     sety(y+1);
    };
+   const [a, setA] = new useState(true);
+  const h = () => {
+    setA(!a);
+   };
+   const [b, setB] = new useState(true);
+   const hb = () => {
+     setB(!b);
+    };
    const [names, setNames] = useState([]);
    const handleClick = (x) => {
      h1;
@@ -75,16 +74,15 @@ let g;
      x=console.log(JSON.stringify(filteredList) === JSON.stringify(itemList)); //true
   return (
     <div className="SearchBar">
-      <div style={{display:'flex',backgroundColor:'rgb(230,231,243)',borderRadius:'8px',border:'1px solid rgb(190,190,190)'}} className="search-header">
+     <div className="search-header" style={{display:'flex',backgroundColor:'rgb(230,231,243)',borderRadius:'8px',border:'1px solid rgb(190,190,190)'}}>
         <div className="search-text"></div>
-        
-        <input  style={{backgroundColor:'rgb(230,231,243)', border:'1px solid rgb(230,231,243)' /*rgb(190,190,190)*/,
-   borderRadius:'8px',width:'100%',height:'40px',outline:'none'}} placeholder={text } onKeyPress={(e) => { if (e.key === "Enter"){handleClick(e.target.value); e.target.value=null; h2;} 
-                        }} id="search-box" onClick={h2} onChange={
+        <button style={{backgroundColor:'rgb(230,231,243)', border:'1px solid rgb(230,231,243)',borderRadius:'8px',color:'gray'}}><CiLocationOn/></button>   <input  style={{backgroundColor:'rgb(230,231,243)', border:'1px solid rgb(230,231,243)',
+   borderRadius:'8px',width:'100%',height:'100%',outline:'none'}} placeholder={text} onKeyPress={(e) => { if (e.key === "Enter"){handleClick(e.target.value); e.target.value=null; h2;} 
+                        }} id="search-box" onClick={h2} value={names[names.length-1]} onChange={
          (event)=>filterBySearch(event,x)
           
-          }  /><button style={{backgroundColor:'rgb(230,231,243)', border:'1px solid rgb(230,231,243)',borderRadius:'8px',color:'gray'}}><BsSearch/></button>
-         
+          } /><button style={{backgroundColor:'rgb(230,231,243)', border:'1px solid rgb(230,231,243)',borderRadius:'8px',color:'gray'}}><IoMdArrowDropdown/></button>
+          
      
       </div>
       <div style={{height:'70px',backgroundColor:'white'}}>
@@ -103,13 +101,7 @@ let g;
       </div>
       <br/>
       <br/>
-      <div style={{height:'40%',backgroundColor:'white',width:'',visibility: t  ? 'visible' : 'hidden',display:'flex'}}>
-<div style={{backgroundColor:'rgb(204,204,255)', color:/*a3 ?'black':*/'rgb(153,50,204)',borderRadius:'8px',borderColor:'rgb(153,50,204)',visibility: t &&  names[0] && a==true ? 'visible' : 'hidden',height:'100%',width:'19%',display:'flex',padding:'3px',justifyContent:'space-between',border:'1px solid rgb(153,50,204)'}}>{names[0]}<button onClick={h} style={{backgroundColor:'rgb(204,204,255)',border:'1px solid rgb(204,204,255)',color:'rgb(153,50,204)',borderRadius:'12px'}}><BsX/></button></div>
-&nbsp;
-<div style={{backgroundColor:'rgb(204,204,255)', color:/*a3 ?'black':*/'rgb(153,50,204)',borderRadius:'12px',borderColor:'rgb(153,50,204)',visibility: t &&  names[1] && b==true ? 'visible' : 'hidden',height:'100%',width:'19%',display:'flex',padding:'3px',justifyContent:'space-between',border:'1px solid rgb(153,50,204)'}}>{names[1]}<button onClick={hb} style={{backgroundColor:'rgb(204,204,255)',border:'1px solid rgb(204,204,255)',color:'rgb(153,50,204)',borderRadius:'8px'}}><BsX/></button></div>
-
-
-        </div>
+      
       </div>
     </div>
   );

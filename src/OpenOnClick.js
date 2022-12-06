@@ -1,0 +1,39 @@
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import {BsX} from "react-icons/bs";
+
+function buildFileSelector(){
+  const fileSelector = document.createElement('input');
+  fileSelector.setAttribute('type', 'file');
+  fileSelector.setAttribute('multiple', 'multiple');
+  return fileSelector;
+}
+const RenderButton = ({onClickPress}) => {
+    return(
+      <button style={{backgroundColor:'white', border:'2px solid rgb(190,190,190)',
+      borderRadius:'8px',width:'100%',height:'80px',borderStyle:'dashed',color:'rgb(190,190,190)'}} onClick={onClickPress}> Drag and Drop to uploadyour videos </button>
+      
+    )
+  }
+  
+ function handleFileSelect (e) {
+    e.preventDefault();
+    this.fileSelector.click();
+  }
+ let fileSelector=0;
+export default function OpenOnClick() {
+  
+  fileSelector = buildFileSelector();
+  
+
+  
+
+ 
+    return (
+      <RenderButton onClickPress={(e) => fileSelector.click()}/>
+      
+    );
+  
+}
+
+

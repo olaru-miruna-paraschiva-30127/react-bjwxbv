@@ -8,11 +8,32 @@ import {CiTextAlignJustify} from "react-icons/ci";
 import {BsPlusSquare} from "react-icons/bs";
 import {BsFillPatchCheckFill} from "react-icons/bs";
 import SearchBar from "./SearchBar";
+import SearchBar1 from "./SearchBar1";
+import Description from "./Description";
+import OpenOnClick from "./OpenOnClick";
 import {names} from "./SearchBar"
 import TextArea from 'texarea-autosize-reactjs';
+let j1=0;
+   let j2=0;
+   let j3=0;
+   let j4=0;
+   let j5=0;
+   let j6=0;
+   let j7=0;
+   let r=0;
+   let g1=0;
+   let g2=0;
+   let g3=0;
+   let g4=0;
+   let g5=0;
+   let g6=0;
+   let g7=0;
+   let g8=0;
 export default function Page2() {
+   
    let i=0;
-   let j=0;
+  
+  let r1=1;
    let k1=false;
    let k2=false;
    let k3=false;
@@ -22,6 +43,7 @@ export default function Page2() {
    let k7=false;
    let k8=false;
 let text1;
+const [a, sA] = useState(true);
    const [a1, sA1] = useState(true);
    const [a2, sA2] = useState(true);
    const [a3, sA3] = useState(true);
@@ -30,6 +52,8 @@ let text1;
    const [a6, sA6] = useState(true);
    const [a7, sA7] = useState(true);
    const [a8, sA8] = useState(true);
+   const h = () => {
+      sA(!a);};
   const h1 = () => {
     sA1(!a1);};
   
@@ -65,14 +89,15 @@ let text1;
   
   
   
- if(k1==true){i=1; text1="Category"};
- if(k2==true){i=2;j=1; text1="Description"} ;
- if(k3==true){i=3} ;
- if(k4==true){i=4} ;
- if(k5==true){i=5} ;
- if(k6==true){i=6} ;
- if(k7==true){i=7} ;
- if(k8==true){i=8} ;
+ if(k1==true){i=1; text1="Category";r=r+1;g1=g1+1;if(r>1){r=1;}};
+ if(k2==true){i=2;j1=1; text1="Description";r=r+1;g2=g2+1; if(r>2){r=2;}} ;
+ if(k3==true){i=3; j2=2; text1="Location";r=r+1 ;g3=g3+1;if(r>3){r=3;}};
+ if(k4==true){i=4;j3=3; r=r+1; text1="Benefits";g4=g4+1;if(r>4){r=4;}} ;
+ if(k5==true){i=5; j4=4;r=r+1;text1="Intro Video";g5=g5+1;if(r>5){r=5;}} ;
+ if(k6==true){i=6; j5=5; r=r+1;g6=g6+1;if(r>6){r=6;}} ;
+ if(k7==true){i=7; j6=6; r=r+1;g7=g7+1;if(r>7){r=7;}} ;
+ if(k8==true){i=8; j7=7; r=r+1;g8=g8+1;if(r>8){r=8;}} ;
+ if(r==8 && g1==1 && g2==1 && g3==1 && g4==1 && g5==1 && g6==1 && g7==1 && g8==1){r1=0;}
   
   return (
     <div>
@@ -94,16 +119,17 @@ let text1;
    flexdirection:'row-reverse',
    justifyContent:'space-between'}}><div style={{color:'rgb(127,0,255)'}}><AiOutlineArrowLeft/></div>&nbsp; <div style={{color:'black'}}>Back</div></div></a>
   <div style={{fontWeight:'bold',fontSize:"25px"}}>Add New Internship</div>
-   <button style={{height:'25px',
-   color:'gray',
-   backgroundColor:'rgb(230,231,243)',
-   border:'rgb(230,231,243)',
-   borderRadius:'8px'
+   <a style={{height:'25px',
+   color:r1==1?'gray':'white',
+   backgroundColor:r1==1?'rgb(230,231,243)':'rgb(127,0,255)',
+   border:r1==1?'rgb(230,231,243)':'rgb(127,0,255)',
+   borderRadius:'8px',
+   padding:'2px'
   }} >
        <div style={{display:'flex',
     flex:1,
    flexdirection:'row-reverse',
-   justifyContent:'space-between'}}> <div>Continue to Next Step</div>&nbsp;<div><AiOutlineArrowRight/> </div></div></button>
+   justifyContent:'space-between'}}> <div>Continue to Next Step</div>&nbsp;<div><AiOutlineArrowRight/> </div></div></a>
         </article>
        
         <div style={{width:"100%",
@@ -145,7 +171,7 @@ let text1;
   height:'20px'
    }}>
 </div><CiTextAlignJustify/></div>&nbsp;&nbsp;<button 
-onClick={h1}
+onClick={r==0?h1:h}
 style={{width:'100%',height:'55px',justifyContent:'space-between',
    display:'flex',
    padding:'18px',
@@ -155,7 +181,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    
    borderRadius:'8px',
    boxShadow: i==1?'1px 2px 9px gray':''
-   }}><div style={{display:'flex'}}><div>Category</div>&nbsp;&nbsp;<div style={{visibility: j==1  ? 'visible' : 'hidden', color:'rgb(127,0,255)'}}><BsFillPatchCheckFill/></div></div><div style={{color:i==1?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
+   }}><div style={{display:'flex'}}><div>Category</div>&nbsp;&nbsp;<div style={{visibility: j1==1  && g1>=1 && /*(*/g2>=1/* || ..)*/? 'visible' : 'hidden', color:'rgb(127,0,255)'}}><BsFillPatchCheckFill/></div></div><div style={{color:i==1?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
 
 <div style={{width:"100%",
       backgroundColor:'rgb(230,231,243)',
@@ -173,7 +199,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
   height:'20px'
    }}>
 </div><CiTextAlignJustify/></div>&nbsp;&nbsp;<button
-onClick={h2}
+onClick={r==1?h2:h}
 style={{width:'100%',height:'55px',justifyContent:'space-between',
    display:'flex',
    padding:'18px',
@@ -181,7 +207,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    backgroundColor:'white',
    border: i==2 ?'1px solid rgb(127,0,255)':'1px solid lightgray',
    boxShadow: i==2?'1px 2px 9px gray':'',
-   borderRadius:'8px'}}><div>Description</div><div style={{color:i==2?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
+   borderRadius:'8px'}}><div style={{display:'flex'}}><div>Description</div>&nbsp;&nbsp;<div style={{visibility: j2==2 && g2>=1 ? 'visible' : 'hidden', color:'rgb(127,0,255)'}}><BsFillPatchCheckFill/></div></div><div style={{color:i==2?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
 
 <div style={{width:"100%",
       backgroundColor:'rgb(230,231,243)',
@@ -199,7 +225,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
   height:'20px'
    }}>
 </div><CiTextAlignJustify/></div>&nbsp;&nbsp;<button
-onClick={h3}
+onClick={r==2?h3:h}
 style={{width:'100%',height:'55px',justifyContent:'space-between',
    display:'flex',
    padding:'18px',
@@ -207,7 +233,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    backgroundColor:'white',
    border: i==3 ?'1px solid rgb(127,0,255)':'1px solid lightgray',
    boxShadow: i==3?'1px 2px 9px gray':'',
-   borderRadius:'8px'}}><div>Location</div><div style={{color:i==3?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
+   borderRadius:'8px'}}><div style={{display:'flex'}}><div>Location</div>&nbsp;&nbsp;<div style={{visibility: j3==3  ? 'visible' : 'hidden', color:'rgb(127,0,255)'}}><BsFillPatchCheckFill/></div></div><div style={{color:i==3?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
 
 <div style={{width:"100%",
       backgroundColor:'rgb(230,231,243)',
@@ -225,7 +251,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
   height:'20px'
    }}>
 </div><CiTextAlignJustify/></div>&nbsp;&nbsp;<button 
-onClick={h4}
+onClick={r==3?h4:h}
 style={{width:'100%',height:'55px',justifyContent:'space-between',
    display:'flex',
    padding:'18px',
@@ -233,7 +259,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    backgroundColor:'white',
    border:i==4 ?'1px solid rgb(127,0,255)':'1px solid lightgray',
    boxShadow: i==4?'1px 2px 9px gray':'',
-   borderRadius:'8px'}}><div>Benefits</div><div style={{color:i==4?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
+   borderRadius:'8px'}}><div style={{display:'flex'}}><div>Benefits</div>&nbsp;&nbsp;<div style={{visibility: j4==4  ? 'visible' : 'hidden', color:'rgb(127,0,255)'}}><BsFillPatchCheckFill/></div></div><div style={{color:i==4?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
 
 <div style={{width:"100%",
       backgroundColor:'rgb(230,231,243)',
@@ -251,7 +277,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
   height:'20px'
    }}>
 </div><CiTextAlignJustify/></div>&nbsp;&nbsp;<button 
-onClick={h5}
+onClick={r==4?h5:h}
 style={{width:'100%',height:'55px',justifyContent:'space-between',
    display:'flex',
    padding:'18px',
@@ -259,7 +285,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    backgroundColor:'white',
    border:i==5 ?'1px solid rgb(127,0,255)':'1px solid lightgray',
    boxShadow: i==5?'1px 2px 9px gray':'',
-   borderRadius:'8px'}}><div>Intro Video</div><div style={{color:i==5?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
+   borderRadius:'8px'}}><div style={{display:'flex'}}><div>Intro Video</div>&nbsp;&nbsp;<div style={{visibility: j5==5  ? 'visible' : 'hidden', color:'rgb(127,0,255)'}}><BsFillPatchCheckFill/></div></div><div style={{color:i==5?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
 
 
 <div style={{width:"100%",
@@ -278,7 +304,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
   height:'20px'
    }}>
 </div><CiTextAlignJustify/></div>&nbsp;&nbsp;<button
-onClick={h6}
+onClick={r==5?h6:h}
 style={{width:'100%',height:'55px',justifyContent:'space-between',
    display:'flex',
    padding:'18px',
@@ -286,7 +312,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    backgroundColor:'white',
    border:i==6 ?'1px solid rgb(127,0,255)':'1px solid lightgray',
    boxShadow: i==6?'1px 2px 9px gray':'',
-   borderRadius:'8px'}}><div>Mentor Details</div><div style={{color:i==6?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
+   borderRadius:'8px'}}><div style={{display:'flex'}}><div>Mentor Details</div>&nbsp;&nbsp;<div style={{visibility: j6==6  ? 'visible' : 'hidden', color:'rgb(127,0,255)'}}><BsFillPatchCheckFill/></div></div><div style={{color:i==6?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
 
 <div style={{width:"100%",
       backgroundColor:'rgb(230,231,243)',
@@ -304,7 +330,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
   height:'20px'
    }}>
 </div><CiTextAlignJustify/></div>&nbsp;&nbsp;<button 
-onClick={h7}
+onClick={r==6?h7:h}
 style={{width:'100%',height:'55px',justifyContent:'space-between',
    display:'flex',
    padding:'18px',
@@ -312,7 +338,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    backgroundColor:'white',
    border:i==7 ?'1px solid rgb(127,0,255)':'1px solid lightgray',
    boxShadow: i==7?'1px 2px 9px gray':'',
-   borderRadius:'8px'}}><div>Recommended Roles</div><div style={{color:i==7?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
+   borderRadius:'8px'}}><div style={{display:'flex'}}><div>Recommended Roles</div>&nbsp;&nbsp;<div style={{visibility: j7==7  ? 'visible' : 'hidden', color:'rgb(127,0,255)'}}><BsFillPatchCheckFill/></div></div><div style={{color:i==7?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
 
 <div style={{width:"100%",
       backgroundColor:'rgb(230,231,243)',
@@ -330,7 +356,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
   height:'20px'
    }}>
 </div><CiTextAlignJustify/></div>&nbsp;&nbsp;<button 
-onClick={h8}
+onClick={r==7?h8:h}
 style={{width:'100%',height:'55px',justifyContent:'space-between',
    display:'flex',
    padding:'18px',
@@ -338,7 +364,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    backgroundColor:'white',
    border:i==8 ?'1px solid rgb(127,0,255)':'1px solid lightgray',
    boxShadow: i==8?'1px 2px 9px gray':'',
-   borderRadius:'8px'}}><div>Web Links & Resources</div><div style={{color:i==8?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
+   borderRadius:'8px'}}><div style={{display:'flex'}}><div>Web Links & Resources</div></div><div style={{color:i==8?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
 
 <div style={{width:"100%",
       backgroundColor:'rgb(230,231,243)',
@@ -351,14 +377,16 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    display:'flex',
     flex:1,
    flexdirection:'row-reverse'}}>
-     <button style={{width:'100%',height:'55px',
+     <button  style={{width:'100%',height:'55px',
    padding:'18px',
   color:'rgb(127,0,255)',
    backgroundColor:'rgb(230,231,243)',
    border:'2px solid pink',
    borderStyle:'dashed',
    borderRadius:'8px',borderColor:'rgb(127,0,255)'}}><BsPlusSquare/>&nbsp;&nbsp;&nbsp;Add More</button></div>
+   
    </div>
+   
 </article>
 <div style={{visibility: i!=0  ?  'visible':'hidden'}}>
 <article style={{ float: 'right', width:'55%', backgroundColor:'white',border:'1px solid white',height:'235px',visibility: i!=0  ?  'visible':'hidden'}}>
@@ -366,8 +394,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
 <div style={{fontWeight:'bold',fontSize:"22px",visibility: i!=0  ?  'visible':'hidden'}}>{text1}</div>
 <br/>
 <div style={{width:'100%'}} >
-   {i==1?<SearchBar/>:<textarea style={{backgroundColor:'rgb(230,231,243)', border:'1px solid rgb(190,190,190)',
-   borderRadius:'8px',width:'100%',height:'150px'}} placeholder="Description"/>}</div></div> 
+   {i==1?<SearchBar/>:i==2?<Description/>:i==3?<SearchBar1/>:i==4?<Description/>:<OpenOnClick/>}</div></div> 
 
 
    
@@ -376,4 +403,13 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    
     </div>
   );
+
+  j1=0;
+    j2=0;
+   j3=0;
+   j4=0;
+  j5=0;
+ j6=0;
+    j7=0;
+    r=0;
 }
