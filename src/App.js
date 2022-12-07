@@ -11,6 +11,9 @@ import SearchBar from "./SearchBar";
 import SearchBar1 from "./SearchBar1";
 import Description from "./Description";
 import OpenOnClick from "./OpenOnClick";
+import Mentor from "./Mentor"
+import Roles from "./Roles"
+import Web from "./Web"
 import {names} from "./SearchBar"
 import TextArea from 'texarea-autosize-reactjs';
 let j1=0;
@@ -94,9 +97,9 @@ const [a, sA] = useState(true);
  if(k3==true){i=3; j2=2; text1="Location";r=r+1 ;g3=g3+1;if(r>3){r=3;}};
  if(k4==true){i=4;j3=3; r=r+1; text1="Benefits";g4=g4+1;if(r>4){r=4;}} ;
  if(k5==true){i=5; j4=4;r=r+1;text1="Intro Video";g5=g5+1;if(r>5){r=5;}} ;
- if(k6==true){i=6; j5=5; r=r+1;g6=g6+1;if(r>6){r=6;}} ;
- if(k7==true){i=7; j6=6; r=r+1;g7=g7+1;if(r>7){r=7;}} ;
- if(k8==true){i=8; j7=7; r=r+1;g8=g8+1;if(r>8){r=8;}} ;
+ if(k6==true){i=6; j5=5; r=r+1;g6=g6+1;if(r>6){r=6;};text1="Mentor Details"} ;
+ if(k7==true){i=7; j6=6; r=r+1;g7=g7+1;if(r>7){r=7;};text1="Recommended Roles"} ;
+ if(k8==true){i=8; j7=7; r=r+1;g8=g8+1;if(r>8){r=8;};text1="Web Links and Resources"} ;
  if(r==8 && g1==1 && g2==1 && g3==1 && g4==1 && g5==1 && g6==1 && g7==1 && g8==1){r1=0;}
   
   return (
@@ -362,9 +365,9 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
    padding:'18px',
    flexdirection:'row-reverse',color:'black',
    backgroundColor:'white',
-   border:i==8 ?'1px solid rgb(127,0,255)':'1px solid lightgray',
-   boxShadow: i==8?'1px 2px 9px gray':'',
-   borderRadius:'8px'}}><div style={{display:'flex'}}><div>Web Links & Resources</div></div><div style={{color:i==8?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
+   border:i==8 &&g8==1 ?'1px solid rgb(127,0,255)':'1px solid lightgray',
+   boxShadow: i==8 && g8==1?'1px 2px 9px gray':'',
+   borderRadius:'8px'}}><div style={{display:'flex'}}><div>Web Links & Resources</div>&nbsp;&nbsp;<div style={{visibility: g8>1  ? 'visible' : 'hidden', color:'rgb(127,0,255)'}}><BsFillPatchCheckFill/></div></div><div style={{color:i==8 && g8==1?'rgb(127,0,255)':'gray'}}><MdPlayArrow/></div></button></div>
 
 <div style={{width:"100%",
       backgroundColor:'rgb(230,231,243)',
@@ -394,7 +397,7 @@ style={{width:'100%',height:'55px',justifyContent:'space-between',
 <div style={{fontWeight:'bold',fontSize:"22px",visibility: i!=0  ?  'visible':'hidden'}}>{text1}</div>
 <br/>
 <div style={{width:'100%'}} >
-   {i==1?<SearchBar/>:i==2?<Description/>:i==3?<SearchBar1/>:i==4?<Description/>:<OpenOnClick/>}</div></div> 
+   {i==1?<SearchBar/>:i==2?<Description/>:i==3?<SearchBar1/>:i==4?<Description/>:i==5?<OpenOnClick/>:i==6 ?<Mentor/>:i==7?<Roles/>:<Web/>}</div></div> 
 
 
    
