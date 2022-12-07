@@ -100,7 +100,7 @@ const [a, sA] = useState(true);
  if(k6==true){i=6; j5=5; r=r+1;g6=g6+1;if(r>6){r=6;};text1="Mentor Details"} ;
  if(k7==true){i=7; j6=6; r=r+1;g7=g7+1;if(r>7){r=7;};text1="Recommended Roles"} ;
  if(k8==true){i=8; j7=7; r=r+1;g8=g8+1;if(r>8){r=8;};text1="Web Links and Resources"} ;
- if(r==8 && g1==1 && g2==1 && g3==1 && g4==1 && g5==1 && g6==1 && g7==1 && g8==1){r1=0;}
+ if(r==8 && g1==1 && g2==1 && g3==1 && g4==1 && g5==1 && g6==1 && g7==1 && g8==2){r1=0;}
   
   return (
     <div>

@@ -5,7 +5,7 @@ import {BsSearch} from "react-icons/bs";
 import {BsX} from "react-icons/bs";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {TbChartCircles} from "react-icons/tb";
-import {VscDiffAdded} from "react-icons/vs";
+import {MdOutlineAddBox} from "react-icons/md";
 export default function Web() {
   const itemList = [
     "Technology",
@@ -90,15 +90,15 @@ let g;
       </div>
       <div style={{height:'70px',backgroundColor:'white'}}>
     
-      <br/>
+      
       <br/>
       <div style={{height:'40%',backgroundColor:'white',width:'',display:'flex'}}>
 
 <button style={{backgroundColor:'white',color:'rgb(127,0,255)',
-   border:'1px solid pink',
+   border:'2px solid pink',
    borderStyle:'dashed',
-   borderRadius:'8px',borderColor:'rgb(127,0,255)',display:'flex'}}> 
-&nbsp;&nbsp;Add URL
+   borderRadius:'8px',borderColor:'rgb(127,0,255)',display:'flex',width:'120px',height:'30px'}}> <div><MdOutlineAddBox/></div>
+&nbsp;&nbsp;<div>Add URL</div>
 </button>
         </div>
       </div>
