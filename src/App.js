@@ -122,7 +122,7 @@ const [a, sA] = useState(true);
    flexdirection:'row-reverse',
    justifyContent:'space-between'}}><div style={{color:'rgb(127,0,255)'}}><AiOutlineArrowLeft/></div>&nbsp; <div style={{color:'black'}}>Back</div></div></a>
   <div style={{fontWeight:'bold',fontSize:"25px"}}>Add New Internship</div>
-   <a style={{height:'25px',
+   <a href="https://react-gusdqt.stackblitz.io/" style={{height:'25px',
    color:r1==1?'gray':'white',
    backgroundColor:r1==1?'rgb(230,231,243)':'rgb(127,0,255)',
    border:r1==1?'rgb(230,231,243)':'rgb(127,0,255)',
