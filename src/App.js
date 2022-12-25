@@ -127,12 +127,13 @@ const [a, sA] = useState(true);
    backgroundColor:r1==1?'rgb(230,231,243)':'rgb(127,0,255)',
    border:r1==1?'rgb(230,231,243)':'rgb(127,0,255)',
    borderRadius:'8px',
-   padding:'2px'
+   padding:'2px',
+   textDecoration: 'none'
   }} >
        <div style={{display:'flex',
     flex:1,
    flexdirection:'row-reverse',
-   justifyContent:'space-between'}}> <div>Continue to Next Step</div>&nbsp;<div><AiOutlineArrowRight/> </div></div></a>
+   justifyContent:'space-between',}}> <div>Continue to Next Step</div>&nbsp;<div><AiOutlineArrowRight/> </div></div></a>
         </article>
        
         <div style={{width:"100%",
